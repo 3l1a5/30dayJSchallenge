@@ -24,6 +24,7 @@
     .panels {
       min-height:100vh;
       overflow: hidden;
+      display: flex;
     }
 
     .panel {
@@ -41,20 +42,34 @@
       font-size: 20px;
       background-size:cover;
       background-position:center;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
     }
 
 
-    .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
-    .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-    .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
+    .panel1 { background-image:url(https://images.genius.com/732yhy9objgqnikrtze1jdpo.662x1000x1.jpg); }
+    .panel2 { background-image:url(https://static1.squarespace.com/static/55a9f1b3e4b0687d3673e88f/55a9fb42e4b02b4125d6be63/55aa5d94e4b0761435672464/1437228437865/TheTurnoftheUniverse_alicexz.png); }
+    .panel3 { background-image:url(https://i.imgur.com/21a7DZd.jpg); }
+    .panel4 { background-image:url(https://static1.squarespace.com/static/55a9f1b3e4b0687d3673e88f/55a9fb42e4b02b4125d6be63/55aa5d96e4b077671f20eabe/1437228438954/TheRoarofOurStars_alicexz.png); }
+    .panel5 { background-image:url(https://static1.squarespace.com/static/55a9f1b3e4b0687d3673e88f/55a9fb42e4b02b4125d6be63/55aa5d65e4b0898b5ef18a64/1517496647847/SDCC15_12thDoctor_alicexz.png); }
 
     .panel > * {
       margin:0;
       width: 100%;
       transition:transform 0.5s;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .panel > *:first-child {transform: translateY(-100%);}
+    .panel.open-active > *:first-child {transform: translateY(0);}
+    .panel > *:last-child {transform: translateY(100%);}
+    .panel.open-active > *:last-child {transform: translateY(0);}
 
     .panel p {
       text-transform: uppercase;
@@ -67,7 +82,16 @@
     }
 
     .panel.open {
-      font-size:40px;
+      font-size: 25px;
+      flex: 5;
+    }
+
+    .panel2 {
+      margin-top: -2.5em;
+    }
+
+    .panel4 {
+      padding-top: 2.5em;
     }
 
   </style>
@@ -75,34 +99,47 @@
 
   <div class="panels">
     <div class="panel panel1">
-      <p>Hey</p>
-      <p>Let's</p>
-      <p>Dance</p>
+      <p>Nice to meet you.</p>
+      <p>Now</p>
+      <p>run for your life!</p>
     </div>
     <div class="panel panel2">
-      <p>Give</p>
-      <p>Take</p>
-      <p>Receive</p>
+      <p>If you talk to Rose just tell her...</p>
+      <p>She</p>
+      <p>knows</p>
     </div>
     <div class="panel panel3">
-      <p>Experience</p>
-      <p>It</p>
-      <p>Today</p>
+      <p>Universe</p>
+      <p>Is</p>
+      <p>Calling</p>
     </div>
     <div class="panel panel4">
-      <p>Give</p>
-      <p>All</p>
-      <p>You can</p>
+      <p>We are all stories in</p>
+      <p>The</p>
+      <p>end, just make it a good one</p>
     </div>
     <div class="panel panel5">
-      <p>Life</p>
-      <p>In</p>
-      <p>Motion</p>
+      <p>I am The</p>
+      <p>Doctor</p>
+      <p>and this is my spoon!</p>
     </div>
   </div>
 
   <script>
+    const panels = document.querySelectorAll('.panel');
 
+    function toggleOpen(){
+      this.classList.toggle('open');
+    };
+
+    function toggleActive(e) {
+      if(e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    };
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
   </script>
 
 
