@@ -1,6 +1,10 @@
     html {
       box-sizing: border-box;
-      background:#ffc600;
+      background: url(http://k31.kn3.net/6/F/5/B/6/6/C5D.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
       font-family:'helvetica neue';
       font-size: 20px;
       font-weight: 200;
@@ -21,7 +25,7 @@
     input.search {
       margin: 0;
       text-align: center;
-      outline:0;
+      outline: 0;
       border: 10px solid #F7F7F7;
       width: 120%;
       left: -10%;
@@ -49,7 +53,7 @@
       padding:20px;
       transition:background 0.2s;
       display:flex;
-      justify-content:space-between;
+      justify-content: space-between;
       text-transform: capitalize;
     }
 
