@@ -18,28 +18,63 @@
     }
 
     // Regular
+    console.log('Hello');
 
     // Interpolated
+    console.log('Hello I am a %s', '🐱')
 
     // Styled
+    console.log('%c I am an awesome text!', 'font-size: 15px; background: yellow; text-shadow: 5px 5px 0 red');
 
     // warning!
+    console.warn('OH NO!');
 
     // Error :|
+    console.error('This may not seem the page you were looking for...');
 
     // Info
+    console.info('The ocean is six miles deep.');
 
     // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), 'Thats not right!');
 
     // clearing
+    console.clear(); // empty because literally clears the console
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p); // allows you to see the methods and properties of the element
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
 
     // counting
+    console.count('Batman');
+    console.count('Superman');
+    console.count('Batman');
+    console.count('Batman');
+    console.count('Batman');
+    console.count('Superman');
+    console.count('Batman');
+    console.count('Superman');
+    console.count('Batman');
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/minarandom')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
 
   </script>
 </body>
