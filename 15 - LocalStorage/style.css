@@ -1,7 +1,7 @@
 
     html {
       box-sizing: border-box;
-      background:url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
+      background:url('https://wallpaper-house.com/data/out/6/wallpaper2you_94245.gif') center no-repeat;
       background-size:cover;
       min-height:100vh;
       display:flex;
@@ -32,6 +32,7 @@
       text-align: center;
       margin: 0;
       font-weight: 200;
+      color: #f76789;
     }
 
     .plates {
@@ -64,7 +65,7 @@
     }
 
     .plates input:checked + label:before {
-      content: '🌮';
+      content: '🦄';
     }
 
     .add-items {
@@ -75,4 +76,12 @@
       padding:10px;
       outline:0;
       border:1px solid rgba(0,0,0,0.1);
+    }
+
+    .add-items .submit {
+      padding:10px;
+      outline:0;
+      border:1px solid rgba(0,0,0,0.1);
+      color: #f76789;
+      background-color: #f7e167;
     }
