@@ -7,7 +7,7 @@
 <body>
 
   <div class="hero">
-    <h1 contenteditable>🔥WOAH!</h1>
+    <h1 contenteditable>💗MEOW!</h1>
   </div>
 
   <style>
@@ -18,6 +18,8 @@
 
   body {
     margin: 0;
+    background-image: url(https://3.bp.blogspot.com/-9-GFlFCZQWE/Vi2u9AkyJEI/AAAAAAAAZXY/xtKtl01Hccw/s1600/look-what-i-made-guys-god-is-within-her.jpg);
+    background-size: cover;
   }
 
   .hero {
@@ -31,10 +33,36 @@
   h1 {
     text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
+    color: #f44283;
   }
   </style>
 
 <script>
+  const hero = document.querySelector('.hero');
+  const text = hero.querySelector('h1');
+  const walk = 200; // 200px
+
+  function shadow(e) {
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    let { offsetX: x, offsetY: y } = e;
+
+    if (this !== e.target) {
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
+    }
+
+    const xWalk = Math.round((x / width * walk) - (walk / 2));
+    const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+    text.style.textShadow = `
+      ${xWalk}px ${yWalk}px 0 rgba(255,0,0),
+      ${xWalk * -2}px ${yWalk}px 0 rgba(148,0,255),
+      ${xWalk}px ${yWalk * -2}px 0 rgba(153,255,238),
+      ${xWalk * -3}px ${yWalk * -2}px 0 rgba(255,250,0)
+    `;
+  }
+
+  hero.addEventListener('mousemove', shadow);
 </script>
 </body>
 </html>
