@@ -10,27 +10,34 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+      background: url("https://wallpapercave.com/wp/wp2177406.jpg");
       background-size: cover;
       display: flex;
       align-items: center;
       min-height: 100vh;
     }
 
-    #bands {
+    #movies {
       list-style: inside square;
       font-size: 20px;
-      background: white;
+      background: rgba(255,255,255, 0.25);
       width: 500px;
       margin: auto;
       padding: 0;
       box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
     }
-    #bands li {
-      border-bottom: 1px solid #efefef;
+    #movies li {
       padding: 20px;
+      color: #ffc600;
+      text-align: center;
+      list-style-type: none;
     }
-    #bands li:last-child {
+
+    #movies li:before {
+      content: '🎞';
+    }
+
+    #movies li:last-child {
       border-bottom: 0;
     }
 
@@ -41,11 +48,23 @@
 
   </style>
 
-  <ul id="bands"></ul>
+  <ul id="movies"></ul>
 
 <script>
-const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+const movies = ['An Andalusian Dog', 'The Devil Wears Prada', 'Casablanca', 'Fight Club', 'A Nightmare on Elm Street', 'The Cabinet of Doctor Caligari', 'Metropolis', 'The Big Sick', 'The Godfather', 'Wonder Woman', 'Psycho', 'Toy Story', 'Baby Driver'];
 
+function strip(movieName) {
+  return movieName.replace(/^(a |the |an)/i, '').trim();
+}
+
+const sortedMovies = movies.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+
+document.querySelector('#movies').innerHTML =
+  sortedMovies
+    .map(movie => `<li> ${movie}</li>`)
+    .join('')
+
+console.log(sortedMovies);
 
 </script>
 
