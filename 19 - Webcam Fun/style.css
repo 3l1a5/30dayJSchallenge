@@ -8,11 +8,11 @@ html {
 
 html {
   font-size: 10px;
-  background:#ffc600;
+  background: url(https://78.media.tumblr.com/05c2c2970f495f3fded80515de58638b/tumblr_oahujbxRsw1uqq8lso1_500.jpg);
 }
 
 .photobooth {
-  background:white;
+  background: url(https://78.media.tumblr.com/05c2c2970f495f3fded80515de58638b/tumblr_oahujbxRsw1uqq8lso1_500.jpg);
   max-width:150rem;
   margin: 2rem auto;
   border-radius:2px;
@@ -37,6 +37,17 @@ html {
   width:200px;
 }
 
+.controls button {
+  background-color: #f4425c;
+  color: #fff;
+}
+
+.rgb label {
+  color: #fff;
+  font-size: 1.2em;
+  background-color: #f4425c;
+}
+
 /*
   Strip!
 */
@@ -49,7 +60,7 @@ html {
   overflow-x: scroll;
   padding:0.8rem 0.8rem 2.5rem 0.8rem;
   box-shadow:0 0 3px rgba(0,0,0,0.2);
-  background:white;
+  background:#f44271;
 }
 
 .strip a:nth-child(5n+1) img { transform: rotate(10deg); }
