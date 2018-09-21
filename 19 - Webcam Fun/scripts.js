@@ -25,8 +25,8 @@ function paintToCanvas() {
  return setInterval(() => { // take an image from the webcam and puts it into the canvas
    ctx.drawImage(video, 0, 0, width, height);
    let pixels = ctx.getImageData(0, 0, width, height); // take the pixels out
-   // pixels = greenScreen(pixels);
-   pixels = rgbSplit(pixels);
+   pixels = greenScreen(pixels);
+   // pixels = rgbSplit(pixels);
    // ctx.globalAlpha = 0.1;
    // pixels = redEffect(pixels); // play a little bit
    ctx.putImageData(pixels, 0, 0); // put them back
