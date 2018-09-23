@@ -8,39 +8,36 @@ body {
   min-height: 100vh;
   margin: 0; /* Important! */
   font-family: sans-serif;
-  background:
-    linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
-    linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
-    linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
-    linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+  background: url(https://img00.deviantart.net/e275/i/2013/068/c/c/harry_potter_hogwarts_wallpaper_by_marcobarcelon-d5xgl4n.jpg);
+  background-size: cover;
 }
 
 .wrapper {
   margin:0 auto;
   max-width:500px;
   font-size: 20px;
+  color: #fff;
   line-height: 2;
   position: relative;
 }
 
 a {
   text-decoration: none;
-  color:black;
+  color: #fff;
   background:rgba(0,0,0,0.05);
   border-radius: 20px;
 }
 
 .highlight {
   transition: all 0.2s;
-  border-bottom:2px solid white;
   position: absolute;
   top:0;
-  background:white;
+  background: rgba(255, 235, 56, 0.70);
   left:0;
   z-index: -1;
   border-radius:20px;
   display: block;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(255, 235, 56, 0.99);
 }
 
 .menu {
@@ -55,5 +52,5 @@ a {
   display: inline-block;
   padding:5px;
   margin:0 20px;
-  color:black;
+  color: #fff;
 }
