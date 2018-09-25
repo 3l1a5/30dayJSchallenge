@@ -9,6 +9,9 @@
   <div class="one">
     <div class="two">
       <div class="three">
+        <button>
+          <p>Click me!</p>
+        </button>
       </div>
     </div>
   </div>
@@ -25,21 +28,51 @@
   }
 
   .one {
-    background: thistle;
+    background: url(https://static.tumblr.com/fa1168dc8ff4df0526d0fc9707d5c9fb/kldam7t/1Ehnu7lt1/tumblr_static_cqffl3fsnzswcokw8kcc8cw8w.jpg);
   }
 
   .two {
-    background:mistyrose;
+    background: url(http://www.hdwallpaperspulse.com/wp-content/uploads/2015/10/11/awesome-tumblr-background.jpeg);
   }
 
   .three {
-    background:coral;
+    background: url(https://data.whicdn.com/images/239460909/large.jpg);
+    background-size: cover;
+    text-align: center;
   }
+
+  button {
+    background-color: pink;
+    outline-color: pink;
+  }
+  button:hover {
+    outline-color: pink;
+  }
+
 </style>
 
-<button></button>
 <script>
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button');
 
+  function logText(e) {
+    console.log(this.classList.value);
+    // e.stopPropagation(); // stops bubbling the event
+    // console.log(this);
+  }
+
+  // document.body.addEventListener('click', logText);
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false,
+    once: true // if it's true it listens for a click and unbinds itself
+  }));
+
+  button.addEventListener('click', () => {
+    console.log('Click!');
+  }, {
+    once: true
+  });
 </script>
 </body>
 </html>
