@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Follow Along Nav</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <h2>Cool</h2>
+  <h2>Paola G.</h2>
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -16,59 +17,51 @@
         <a href="#">About Me</a>
         <div class="dropdown dropdown1">
           <div class="bio">
-            <img src="https://logo.clearbit.com/wesbos.com">
-            <p>Wes Bos sure does love web development. He teaches things like JavaScript, CSS and BBQ. Wait. BBQ isn't part of web development. It should be though!</p>
+            <img src="https://pbs.twimg.com/profile_images/1008100243404189698/t2gSr3RO_400x400.jpg">
+            <p>Paola G. loves RoR and her fearest enemy is the CSS!</p>
           </div>
         </div>
       </li>
       <li>
-        <a href="#">Courses</a>
+        <a href="#">Websites I Recommend</a>
         <ul class="dropdown courses">
           <li>
-            <span class="code">RFB</span>
-            <a href="https://ReactForBeginners.com">React For Beginners</a>
+            <span class="code">JS-30</span>
+            <a href="https://javascript30.com/">30 Day Vanilla JS Coding Challenge</a>
           </li>
           <li>
-            <span class="code">ES6</span>
-            <a href="https://ES6.io">ES6 For Everyone</a>
+            <span class="code">NN</span>
+            <a href="https://www.thenetninja.co.uk/">The Net Ninja</a>
           </li>
           <li>
-            <span class="code">NODE</span>
-            <a href="https://LearnNode.com">Learn Node</a>
+            <span class="code">Code</span>
+            <a href="https://www.codecademy.com/es">Codecademy</a>
           </li>
           <li>
-            <span class="code">STPU</span>
-            <a href="https://SublimeTextBook.com">Sublime Text Power User</a>
+            <span class="code">FM</span>
+            <a href="http://www.falconmasters.com/">Falcon Masters</a>
           </li>
           <li>
-            <span class="code">WTF</span>
-            <a href="http://Flexbox.io">What The Flexbox?!</a>
+            <span class="code">CW</span>
+            <a href="https://www.codewars.com/">Codewars</a>
           </li>
           <li>
-            <span class="code">GRID</span>
-            <a href="https://CSSGrid.io">CSS Grid</a>
+            <span class="code">VS</span>
+            <a href="https://vueschool.io/">Vueschool</a>
           </li>
           <li>
-            <span class="code">LRX</span>
-            <a href="http://LearnRedux.com">Learn Redux</a>
-          </li>
-          <li>
-            <span class="code">CLPU</span>
-            <a href="http://CommandLinePowerUser.com">Command Line Power User</a>
-          </li>
-          <li>
-            <span class="code">MMD</span>
-            <a href="http://MasteringMarkdown.com">Mastering Markdown</a>
+            <span class="code">Platzi</span>
+            <a href="https://platzi.com">Platzi</a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#">Other Links</a>
+        <a href="#">Contact</a>
         <ul class="dropdown dropdown3">
-          <li><a class="button" href="http://twitter.com/wesbos">Twitter</a></li>
-          <li><a class="button" href="http://facebook.com/wesbos.developer">Facebook</a></li>
-          <li><a class="button" href="http://wesbos.com">Blog</a></li>
-          <li><a class="button" href="http://wesbos.com/courses">Course Catalog</a></li>
+          <li><a class="button" href="http://twitter.com/minarandom">Twitter</a></li>
+          <li><a class="button" href="http://facebook.com/paolacgz">Facebook</a></li>
+          <li><a class="button" href="http://github.com/minarandom">Github</a></li>
+          <li><a class="button" href="https://www.linkedin.com/in/paolacgz/">LinkedIn</a></li>
         </ul>
       </li>
     </ul>
@@ -85,16 +78,18 @@
   body {
     margin: 0;
     min-height: 100vh;
-    background:
-      linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
-      linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
-      linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
-      linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+    background: url(http://www.bluestarinteriorsinc.com/wp-content/uploads/2017/09/home-design-pastel-colors-tumblr-background-beach-style-large-colored-wallpapers-free-full-hd.jpg);
+    background-size: cover;
   }
 
   h2 {
     margin-top: 0;
     padding-top: .8em;
+    color: #e21212;
+    font-size: 2.5em;
+    font-family: Pacifico;
+    font-weight: lighter;
+    margin-left: 1em;
   }
 
   nav {
@@ -188,6 +183,7 @@
   .bio img {
     float:left;
     margin-right:20px;
+    width: 30%;
   }
 
   .courses {
@@ -217,10 +213,51 @@
   /* Matches Twitter, TWITTER, twitter, tWitter, TWiTTeR... */
   .button[href*=twitter] { background: #019FE9; }
   .button[href*=facebook] { background: #3B5998; }
-  .button[href*=courses] { background: #ffc600; }
+  .button[href*=linkedin] { background: #003489; }
 </style>
 
 <script>
+  const triggers = document.querySelectorAll('.cool > li');
+  const background = document.querySelector('.dropdownBackground');
+  const nav = document.querySelector('.top');
+
+  function handleEnter() {
+    this.classList.add('trigger-enter');
+    setTimeout(() => {
+      if(this.classList.contains('trigger-enter')) {
+        this.classList.add('trigger-enter-active')
+      }
+    }, 150);
+
+    // setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
+
+    background.classList.add('open');
+
+    const dropdown = this.querySelector('.dropdown');
+    const dropdownCoords = dropdown.getBoundingClientRect();
+    const navCoords = nav.getBoundingClientRect();
+    // console.log(dropdownCoords);
+    // console.log(navCoords);
+
+    const coords = {
+      height: dropdownCoords.height,
+      width: dropdownCoords.width,
+      top: dropdownCoords.top - navCoords.top,
+      left: dropdownCoords.left - navCoords.left,
+    };
+
+    background.style.setProperty('width', `${coords.width}px`);
+    background.style.setProperty('height', `${coords.height}px`);
+    background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+  }
+
+  function handleLeave() {
+    this.classList.remove('trigger-enter', 'trigger-enter-active');
+    background.classList.remove('open');
+  }
+
+  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+  triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 </script>
 
 </body>
