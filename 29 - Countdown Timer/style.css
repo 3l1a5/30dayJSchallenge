@@ -1,8 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
-  background: #8E24AA;
-  background: linear-gradient(45deg,  #42a5f5 0%,#478ed1 50%,#0d47a1 100%);
+  background: url(https://i.pinimg.com/originals/e1/5b/20/e15b209946b3b9159ea09aadcae4d58e.jpg);
 }
 
 *, *:before, *:after {
@@ -19,7 +18,7 @@ body {
   font-weight: 100;
   font-size: 20rem;
   margin: 0;
-  color:white;
+  color: #9e1111;
   text-shadow:4px 4px 0 rgba(0,0,0,0.05);
 }
 
@@ -78,5 +77,6 @@ body {
 
 .display__end-time {
   font-size: 4rem;
-  color:white;
+  font-family: Pacifico;
+  color: #9e1111;
 }
